@@ -19,14 +19,10 @@ $(function () {
                     },
                     // 长度校验
                     stringLength: {
-                        min: 6,
-                        max: 30,
+                        min: 2,
+                        max: 6,
                         message: '用户名长度必须在6到30之间'
                     },
-                    regexp: {
-                        regexp: /^[a-zA-Z0-9_\.]+$/,
-                        message: '用户名由数字字母下划线和.组成'
-                    }
                 }
             },
 
@@ -47,4 +43,39 @@ $(function () {
             }
         }
     })
+    /*
+注册表单校验成功事件，在校验成功时，会触发
+在事件中阻止默认的提交(会跳转)，通过ajax进行提交（异步不跳转）
+**/
+    $("#form").on('success.form.bv', function (e) {
+        //阻止浏览器默认行为
+        e.preventDefault();
+        //使用ajax提交逻辑
+
+        //通过ajax提交
+        $.ajax({
+            type: 'post',
+            url: '/employee/employeeLogin',
+            data: $('#form').serialize(),//表单序列化，获取表单中的所有内容
+            dataType: 'json',
+            success: function (info) {
+                console.log(1);
+                if (info.success) {
+                    //成功跳转到首页
+
+                    location.href = 'index.html';
+                }
+                if (info.error === 1000) {
+                    alert('用户名不存在')
+                }
+                if (info.error === 1001) {
+                    alert('密码错误')
+                }
+            }
+        })
+    });
+
+
 })
+
+

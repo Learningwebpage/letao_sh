@@ -34,7 +34,7 @@
                         <div class="form-group">
                             <label for="password" class="col-sm-3 control-label">密　码：</label>
                             <div class="col-sm-9">
-                                <input type="password"  name='password' class="form-control" id="inputPassword3" placeholder="请输入密码">
+                                <input type="password" name='password' class="form-control" id="inputPassword3" placeholder="请输入密码">
                             </div>
                         </div>
                         <div class="form-group">
@@ -42,7 +42,8 @@
                                 <!-- reset重置 -->
                                 <!-- pull-left居左 -->
                                 <button type="reset" class="btn btn-default pull-left">重置</button>
-                                <button  class="btn btn-default btn btn-primary pull-right">登录</button>
+                                <!-- botton是同步的，不能发送ajax，要用submit -->
+                                <button type='submit' class="btn btn-default btn btn-primary pull-right">登录</button>
                             </div>
                         </div>
                     </form>
