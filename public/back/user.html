@@ -31,7 +31,7 @@
             <ul>
                 <li>
                     <!-- class="current" 高亮 -->
-                    <a href="user.html">
+                    <a href="user.html" class="current">
                         <i class="glyphicon glyphicon-user"></i>
                         <span>用户管理</span>
                     </a>
@@ -95,11 +95,6 @@
                 Launch demo modal
             </button> -->
 
-            <!-- 右边下面内容的两个图 绘制图形-->
-            <div class="echarts-box">
-                <div class="echarts_left pull-left"></div>
-                <div class="echarts_right  pull-right"></div>
-            </div>
         </div>
     </div>
 
@@ -118,8 +113,7 @@
                     <h4 class="modal-title" id="myModalLabel">温馨提示</h4>
                 </div>
                 <div class="modal-body">
-                    <p class="red">
-                        <i class="glyphicon glyphicon-info-sign"></i>你确定要退出管理层么</p>
+                    <p class="red"><i class="glyphicon glyphicon-info-sign"></i>你确定要退出管理层么</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -135,14 +129,11 @@
     <!-- 引入表单校验的插件 -->
     <script src="./lib/bootstrap-validator/js/bootstrapValidator.min.js "></script>
     <script src="./lib/nprogress/nprogress.js "></script>
-    <!-- 引echarts包，内容的两个图 -->
-    <script src="./lib/echarts/echarts.min.js"></script>
     <!-- 进度条的js -->
     <script src="./js/common.js "></script>
     <!-- 登录拦截的js -->
     <script src="./js/isLogin.js"></script>
-    <!-- 右下图 -->
-    <script src="./js/index.js"></script>
+
 </body>
 
 </html>

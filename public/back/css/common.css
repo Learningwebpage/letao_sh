@@ -1,0 +1,154 @@
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* 系统管理距离上面的距离 */
+.mt_20 {
+    margin-top: 20px;
+}
+
+/* 模态框弹出的文字和图标颜色 */
+.red {
+    color: #A94442;
+}
+
+.lt_aside {
+    width: 180px;
+    height: 100%;
+    position: fixed;    
+    background-color: #222D32;
+    /* 提高层级，不然主体的头部会盖住 */
+    z-index: 999;
+    transition: all 1s;
+    left: 0;
+    top: 0;
+}
+
+/* 交集选择器 */
+.lt_aside.hidemenu {
+    left: -180px;
+}
+
+.lt_aside .brand {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center; 
+    background-color: #367FA9;
+}
+
+/* 大标题的a  黑马32期 */
+.lt_aside .brand a {
+    color: #fff;
+    font-size: 25px; 
+}
+ 
+
+
+/* 用户 */
+/* 距离上面的距离 */
+.lt_aside .user {
+    padding-top: 30px;
+    width: 180px;
+    height: 180px;
+}
+/* 图片太大了，缩小 */
+.lt_aside .user img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    /* 将图片居中，让盒子变成块级 */
+    display: block;
+    margin: 0 auto;
+}
+
+.lt_aside .user p {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+}
+
+/* 导航 */
+.lt_aside .nav a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    padding-left: 40px;
+    border-left: 3px solid transparent;
+    /* 颜色透明 */
+}
+
+/* 边框 */
+.lt_aside .nav a.current {
+    background-color: #1D1F21;
+    border-left: 3px solid #006699;
+}
+.lt_aside .nav a i {
+    margin-right: 4px;
+}
+
+.lt_aside .nav .child {
+    display: none;
+}
+.lt_aside .nav .child a {
+    padding-left: 60px;
+}
+
+/* 主体部分 */
+/* 因为固定定位不占位置，所以下面的就上去了
+   需要和上面有些距离
+*/
+.lt_main {
+    padding-left: 180px;
+    height: 2000px;
+    padding-top: 50px;
+    transition: all 1s;
+}
+
+.lt_main.hidemenu {
+    padding-left:0;
+}
+/* 流式布局 */
+.lt_topbar {
+    width: 100%;
+    height: 50px;
+    background-color: #3C8DBC;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-left: 180px;
+    transition: all 1s;
+}
+
+.lt_topbar.hidemenu {
+    padding-left: 0;
+} 
+.lt_topbar .icon_left,
+.lt_topbar .icon_right {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+}
+
+/* 右下面的内容 */
+.echarts_left,
+.echarts_right {
+    width: 48%;
+    height: 400px;
+    background-color: pink;
+}
