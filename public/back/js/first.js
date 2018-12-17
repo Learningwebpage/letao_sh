@@ -41,4 +41,15 @@ $(function () {
             }
         })
     }
+
+
+    // 给添加按钮注册点击事件
+    $('#addBtn').click(function () {
+        // alert(1)
+        // 让模态框显示 
+        $('#addModal').modal("show")
+    })
+
+    // 调用表单校验效应
+
 })
