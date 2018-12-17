@@ -1,3 +1,4 @@
+/* 点击登录之后整个页面的css */
 a:link,
 a:visited,
 a:hover,
@@ -151,4 +152,13 @@ ul {
     width: 48%;
     height: 400px;
     background-color: pink;
+}
+
+
+/* user用户管理 */ 
+.table.table-bordered th,
+.table.table-bordered td {
+   text-align: center;
+   /* 直接写垂直居中，权重不够，需要把父元素加上,交集选择器 */
+   vertical-align: middle;
 }
