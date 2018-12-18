@@ -43,13 +43,64 @@ $(function () {
     }
 
 
-    // 给添加按钮注册点击事件
+    // 2.给添加按钮注册点击事件
     $('#addBtn').click(function () {
         // alert(1)
         // 让模态框显示 
         $('#addModal').modal("show")
     })
 
-    // 调用表单校验效应
+    // 3.调用表单校验插件，完成校验
+    $('#form').bootstrapValidator({
+        //2. 指定校验时的图标显示，默认是bootstrap风格
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
 
+        // 校验字段  先给input设置name
+        fields: {
+            categoryName: {
+                // 校验规则
+                validators: {
+                    // 非空
+                    notEmpty: {
+                        // 提示信息
+                        message: '请输入一级分类名称'
+                    },
+                }
+            }
+        }
+    })
+
+    // 点击添加
+    $('#quit').on('click', function () {
+        // alert(1)
+        $("#form").on('success.form.bv', function (e) {
+            e.preventDefault();
+            //使用ajax提交逻辑
+        });
+
+        // 发送ajax请求
+        $.ajax({
+            url: '/category/addTopCategory',
+            type: 'POST',
+            data: $('#form').serialize(),
+            dataType: 'json',
+            success: function (info) {
+                // console.log(info);
+                if (info.success) {
+                    // 模态框隐藏
+                    $('#addModal').modal("hide");
+                    // 重新渲染页面
+                    currentPage = 1;
+                    render();
+                    // 重置表单内容，true表示两个状态都重置
+                    $('#form').data("bootstrapValidator").resetForm(true);
+                }
+            }
+        })
+
+    })
 })
